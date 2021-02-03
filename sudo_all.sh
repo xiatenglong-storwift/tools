@@ -23,7 +23,7 @@ EOF
 }
 EOF
 	expect <<EOF
-	spawn ssh -tv sudo  -S sed -i '$a fil ALL=(ALL) NOPASSWD: ALL' /etc/sudoers
+	spawn ssh -tv sudo  -S sed -i '\\\$a fil ALL=\(ALL\) NOPASSWD: ALL' /etc/sudoers
 	expect {
 	"for ${user}:" {send "${pass}\r"; exp_continue}
 	eof
